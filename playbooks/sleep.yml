@@ -1,0 +1,12 @@
+---
+- name: hello
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - debug:
+        msg: hello
+    - pause:
+        minutes: 1
+    - debug:
+        msg: goodbye
+...
