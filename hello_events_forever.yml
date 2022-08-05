@@ -1,13 +1,12 @@
 ---
-- name: Hello Events Mulitple Jobs
+- name: Hello Events Forever
   hosts: all
   sources:
-    - benthomasson.eda.range:
-        limit: 10
-        delay: 1
+    - benthomasson.eda.tick:
+        delay: 10
   rules:
     - name: Say Hello
-      condition: event.i > 1
+      condition: event.i >= 1
       action:
         run_playbook:
           name: benthomasson.eda.hello
