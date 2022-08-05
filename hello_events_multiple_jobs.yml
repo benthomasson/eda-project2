@@ -1,0 +1,14 @@
+---
+- name: Hello Events
+  hosts: all
+  sources:
+    - benthomasson.eda.range:
+        limit: 10
+        delay: 1
+  rules:
+    - name: Say Hello
+      condition: event.i > 1
+      action:
+        run_playbook:
+          name: benthomasson.eda.hello
+...
