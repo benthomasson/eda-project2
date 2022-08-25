@@ -4,5 +4,8 @@
   gather_facts: false
   tasks:
     - shell: hostname
+      register: result
+    - debug:
+        msg: "{{result}}"
 ...
 
