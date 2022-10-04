@@ -1,8 +1,8 @@
 FROM quay.io/ansible/ansible-runner:latest
 ARG ANSIBLE_GALAXY_CLI_COLLECTION_OPTS=
 USER root
-ADD . /project
-WORKDIR /project
+ADD . /runner/project
+WORKDIR /runner/project
 RUN dnf install -y gcc python38-devel
 RUN pip3 install --upgrade pip setuptools
 RUN ansible-galaxy role install -r requirements.yml --roles-path /usr/share/ansible/roles
