@@ -1,0 +1,18 @@
+---
+- name: Hello-event
+  hosts: all
+  sources:
+  sources:
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 5000
+  rules:
+    - name: "Run job template"
+      condition: event.payload.message == "Ansible is super cool"
+      action:
+        run_job_template:
+          name: hello
+          organization: Default
+          retries: 1
+          delay: 10
+...
