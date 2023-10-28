@@ -2,7 +2,7 @@
 - name: k8s-route-event
   hosts: all
   sources:
-    - ansible.eda.k8s:
+    - sabre1041.eda.k8s:
         api_version: v1
         kind: Route
   rules:
