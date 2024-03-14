@@ -1,0 +1,13 @@
+---
+- name: Hello Events 500
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 500
+        delay: 1
+  rules:
+    - name: Say Hello
+      condition: true
+      action:
+        debug:
+...
