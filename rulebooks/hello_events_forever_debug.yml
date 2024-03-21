@@ -1,0 +1,12 @@
+---
+- name: Hello Events 100
+  hosts: all
+  sources:
+    - ansible.eda.tick:
+        delay: 1
+  rules:
+    - name: Say Hello
+      condition: true
+      action:
+        debug:
+...
