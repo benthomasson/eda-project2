@@ -1,0 +1,13 @@
+---
+- name: Hello Controller
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 500
+  rules:
+    - name: "Run job template"
+      condition: event.i < 501
+      action:
+        debug:
+          msg: hi
+  execution_strategy: "parallel"
