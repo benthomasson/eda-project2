@@ -1,0 +1,18 @@
+---
+- name: "200k event rules"
+  hosts: all
+  sources:
+    - name: generic
+      ansible.eda.generic:
+        create_index: i
+        loop_count: 200000
+        payload:
+          - name: fred
+  rules:
+    - name: r1
+      condition:
+        all:
+          - event.name == "fred"
+        timeout: 6 minutes
+      action:
+        debug:
